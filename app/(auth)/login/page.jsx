@@ -16,7 +16,7 @@ export default function LoginPage() {
 
     try {
       // Adjust this URL to point to your actual PHP server environment
-      const response = await fetch('https://lightgrey-badger-968935.hostingersite.com/api/login.php', {
+      const response = await fetch('https://haalchaal.live/api/login.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

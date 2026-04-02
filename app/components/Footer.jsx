@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 function Footer() {
@@ -26,17 +27,22 @@ function Footer() {
               <li><a href="#" className="hover:text-red-500">Terms of Service</a></li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h5 className="text-white text-xs font-bold mb-4 uppercase tracking-widest">Subscribe</h5>
             <div className="flex bg-gray-800 p-1 rounded-lg">
               <input type="email" placeholder="Email" className="bg-transparent border-none outline-none text-xs px-2 flex-1" />
               <button className="bg-red-700 text-white text-[10px] font-bold px-3 py-1.5 rounded-md">GO</button>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="max-w-7xl mx-auto px-6 mt-10 pt-6 border-t border-gray-800 text-[10px] text-center">
+        {/* <div className="max-w-7xl mx-auto px-6 mt-10 pt-6 border-t border-gray-800 text-[10px] text-center">
           © 2024 NEWS CHANNEL. ALL RIGHTS RESERVED.
+        </div> */}
+         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-slate-400">
+        <div className="container mx-auto px-6">
+          <p>&copy; 2026 HAALCHAAL. All Rights Reserved | Powered by <Link href="https://edigitalindian.com/" target="_blank" className="text-[#ffcc00] hover:underline">E Digital India</Link></p>
         </div>
+      </div>
       </footer>
   )
 }
