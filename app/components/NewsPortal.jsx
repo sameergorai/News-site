@@ -7,6 +7,7 @@ export default function PublicNewsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedNews, setSelectedNews] = useState(null);
 
+  console.log("Rendering PublicNewsPage component",news); // Debug log to check component rendering
   // Fetch live news for public viewing (No auth required, Cache busted)
   const fetchNews = useCallback(async () => {
     setIsLoading(true);
@@ -104,7 +105,8 @@ export default function PublicNewsPage() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {news.map((item) => (
-              <article
+              <button
+              // onClick={() => setSelectedNews(item)}
                 key={item.id}
                 className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:border-red-100 active:scale-[0.98] transition-all group flex flex-col"
               >
@@ -131,15 +133,15 @@ export default function PublicNewsPage() {
                     {item.summary}
                   </p>
                   <div className="mt-auto pt-3 border-t border-gray-50 flex justify-end">
-                    <button
-                      onClick={() => setSelectedNews(item)}
+                    <div
+                      
                       className="text-red-700 font-bold text-[11px] flex items-center gap-1 hover:gap-2 transition-all"
                     >
                       READ FULL STORY <ChevronRight size={14} />
-                    </button>
+                    </div>
                   </div>
                 </div>
-              </article>
+              </button>
             ))}
           </div>
         )}
@@ -151,7 +153,7 @@ export default function PublicNewsPage() {
           <div className="bg-white w-full h-full md:h-auto md:max-w-4xl md:max-h-[90vh] md:rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom md:zoom-in duration-300">
             <div className="sticky top-0 bg-white border-b p-4 flex justify-between items-center z-10">
               <button
-                onClick={() => setSelectedNews(null)}
+                // onClick={() => setSelectedNews(null)}
                 className="text-gray-900 flex items-center gap-2 font-bold text-xs hover:text-red-700 transition-colors"
               >
                 <ArrowLeft size={20} /> <span className="hidden md:inline">BACK TO LIST</span>
@@ -191,7 +193,7 @@ export default function PublicNewsPage() {
 
             <div className="p-4 border-t bg-gray-50 flex justify-end">
               <button
-                onClick={() => setSelectedNews(null)}
+                // onClick={() => setSelectedNews(null)}
                 className="bg-black text-white font-bold py-2.5 px-8 rounded-lg text-xs hover:bg-gray-800 transition-colors"
               >
                 CLOSE ARTICLE
